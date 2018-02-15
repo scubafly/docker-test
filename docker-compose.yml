@@ -1,0 +1,16 @@
+version: '3'
+services: 
+  web:
+    image: php:7-apache
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./htdocs:/var/www/docker-test/htdocs:cached
+      - ./vendor:/var/www/docker-test/vendor:delegated
+  db:
+    image: mysql
+    ports:
+      - "3306:3306"
+    env_file:
+      - ./settings/docker-mysql.settings
