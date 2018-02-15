@@ -6,7 +6,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./htdocs:/var/www/docker-test/htdocs:cached
+      - ./htdocs:/var/www/html:cached
       - ./vendor:/var/www/docker-test/vendor:delegated
   db:
     image: mysql
