@@ -12,5 +12,7 @@ services:
     image: mysql
     ports:
       - "3306:3306"
+    volumes:
+      - ./db-backups:/var/mysql/backups:delegated
     env_file:
       - ./settings/docker-mysql.settings
